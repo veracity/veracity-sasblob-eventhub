@@ -16,14 +16,14 @@ namespace sas_blob_to_eventhub
         /// Coverts csv string to json string
         /// </summary>
         /// <param name="csvContent">string content of csv data</param>
-        /// <param name="delimeter">delimenter used in csv data</param>
+        /// <param name="delimiter">delimiter used in csv data</param>
         /// <returns></returns>
-        public static string Convert(string csvContent, string delimeter)
+        public static string Convert(string csvContent, string delimiter)
         {
             try
             {
                 string jsonResult;
-                using (var p = new ChoCSVReader(new StringReader(csvContent)).WithFirstLineHeader().WithDelimiter(delimeter))
+                using (var p = new ChoCSVReader(new StringReader(csvContent)).WithFirstLineHeader().WithDelimiter(delimiter))
                 {
                     using (var stringWriter = new StringWriter())
                     {
